@@ -16,13 +16,13 @@
       })
       .state('results', {
         url: '/resultsList',
-        templateUrl: 'app/search/search.html',
+        templateUrl: 'app/results/results.html',
         controller: 'ResultsController',
         controllerAs: 'ctrl'
       })
       .state('groceryList', {
         url: '/grocerylist',
-        templateUrl: 'app/search/search.html',
+        templateUrl: 'app/groceryList/groceryList.html',
         controller: 'GroceryListController',
         controllerAs: 'ctrl'
       });
