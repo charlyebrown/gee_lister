@@ -3,7 +3,7 @@
 
   angular
     .module('geeLister')
-    .controller('SearchController', function(){
+    .controller('SearchController', function(SearchFactory){
       var self = this;
       console.log("Search Controller")
     });
