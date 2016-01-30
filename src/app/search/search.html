@@ -2,8 +2,11 @@
 
   <div class="text-center">
     <h2>What recipes are you looking for today?</h2>
-	<input type="text" id="searchTerm"/>
-	<button>Search</button>
+	<input ng-model="ctrl.searchParams" type="text"/>
+	<button ng-click="ctrl.search()">Search</button>
+  </div>
+
+  <div gl-recipe-directive class="text-center results" ng-show="ctrl.results">
   </div>
 
 </div>
