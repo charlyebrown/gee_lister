@@ -4,10 +4,13 @@
   angular
     .module('geeLister')
 
-    .controller('SearchController', function (SearchFactory, RecipesService){
+    .controller('SearchController', function (SearchFactory, RecipesService, RecipeService){
     	console.log('SearchController');
     	var self = this;
     	self.results = false;
+    	self.getRecipe = function(recipe) {
+    		RecipeService.recipe = recipe;
+    	}
 		self.search = function(){
 			console.log('Searching...')
 			self.results = true;

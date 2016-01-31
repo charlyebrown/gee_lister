@@ -3,11 +3,13 @@
 
   angular
     .module('geeLister')
-    .controller('RecipeController', function(RecipeService){
+    .controller('RecipeController', function(RecipeService, GroceryListService){
       var self = this;
       self.recipe = RecipeService.recipe;
-      console.log('recipe is: ' + self.recipe.recipeName);
-      console.log("Recipe Controller");
+      self.groceryList = GroceryListService.groceryList;
+      self.addToGroceryList = function(GroceryListService){
+      	self.groceryList.push(self.recipe.ingredients);
+      }
     });
 
 })();

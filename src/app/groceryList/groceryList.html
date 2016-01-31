@@ -2,6 +2,12 @@
 
   <div class="h2 text-center">
     <h1>Grocery List</h1>
+    <div ng-repeat="item in ctrl.groceryList">
+    	<ul>
+    		<li ng-bind="item"></li>
+    	</ul>
+    </div>
+
   </div>
 
 </div>
