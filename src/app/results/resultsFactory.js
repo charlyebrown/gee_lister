@@ -2,7 +2,7 @@ angular.module("RecipeFactory",[])
 
 .factory("RecipeDTO", function(){
 	
-	function RecipeDTO(title, ingredients, rating, picture, directions){
+	function RecipeDTO(title, ingredients, rating, picture, directions, id){
 		this.title = title;
 		this.ingredients = ingredients;
 		this.rating = rating;
