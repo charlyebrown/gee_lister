@@ -1,5 +1,6 @@
 <div class="h2 text-center">
 	<div ng-repeat="recipe in ctrl.recipes">
-  		<label ng-bind="recipe.recipeName"></label>
+  		<a ui-sref="recipe({recipeId: recipe.id})" ng-bind="recipe.recipeName"></a
+  		<img src="recipe.imageUrlsBySize.90">
   	</div>
 </div>

@@ -3,9 +3,10 @@
 
   angular
     .module('geeLister')
-    .controller('ResultsController', function(){
+    .controller('RecipeController', function($stateParams, RecipesService){
       var self = this;
-      console.log("Results Controller");
+      self.recipes = RecipesService.recipes;
+      console.log(self.recipes);
     });
 
 })();
