@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+  var results = null;
 
   angular
     .module('geeLister')
@@ -7,19 +8,23 @@
     .controller('SearchController', function (SearchFactory, RecipesService, RecipeService){
     	console.log('SearchController');
     	var self = this;
-    	self.results = false;
+    	if (results === null){
+    	} else {
+    		self.recipes = results;
+    	}
+
     	self.getRecipe = function(recipe) {
     		RecipeService.recipe = recipe;
     	}
 		self.search = function(){
 			console.log('Searching...')
-			self.results = true;
 			SearchFactory.get({
 			q: self.searchParams
 		})
 		.$promise
 		.then(function onSuccess(response) {
-			RecipesService.recipes = response.matches;
+			results = response.matches
+			RecipesService.recipes = results;
 			self.recipes = RecipesService.recipes;
 		}, function onError(error){
 			console.log(error)
