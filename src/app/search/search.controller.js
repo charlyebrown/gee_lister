@@ -5,7 +5,7 @@
   angular
     .module('geeLister')
 
-    .controller('SearchController', function (SearchFactory, RecipesService, RecipeService){
+    .controller('SearchController', function (RecipesService, RecipeService){
     	console.log('SearchController');
     	var self = this;
     	if (results === null){
@@ -13,21 +13,21 @@
     		self.recipes = results;
     	}
 
-    	self.getRecipe = function(recipe) {
-    		RecipeService.recipe = recipe;
-    	}
-		self.search = function(){
-			console.log('Searching...')
-			SearchFactory.get({
-			q: self.searchParams
-		})
-		.$promise
-		.then(function onSuccess(response) {
-			results = response.matches
-			RecipesService.recipes = results;
-			self.recipes = RecipesService.recipes;
-		}, function onError(error){
-			console.log(error)
-		})}; 
+    	self.getRecipe = RecipeService.getRecipe;
+    	
+    	self.getRecipes = function(){ self.recipes = RecipesService.recipes};
+
+    	self.search = function() {
+    		RecipeService.search(self.searchParams)
+    		.$promise
+			.then(function onSuccess(response) {
+				RecipesService.recipes = response.matches;
+				results = RecipesService.recipes;
+				self.recipes = results;
+			}, function onError(error){
+				console.log(error)
+			}); 
+    	
+    	};
 	})
 })();
