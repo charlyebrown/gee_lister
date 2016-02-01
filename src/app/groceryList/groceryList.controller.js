@@ -6,7 +6,7 @@
     .controller('GroceryListController', function(GroceryListService){
       var self = this;
       self.groceryList = GroceryListService.groceryList
-      console.log("Grocery List Controller")
+      console.log(self.groceryList);
     });
 
 })();
