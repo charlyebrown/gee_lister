@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="h2 text-center">
+    <h1>Grocery List</h1>
+    <div ng-repeat="item in ctrl.groceryList">
+    	<ul>
+    		<input type="checkbox" 
+    			   checklist-model="ctrl.checkedGroceryItems" 
+    			   checklist-value="item">{{item}}
+    	</ul>
+    </div>
+    <button ng-click="ctrl.searchForMoreItems()">Search for recipes with these ingredients</button>
+  </div>
+</div>
