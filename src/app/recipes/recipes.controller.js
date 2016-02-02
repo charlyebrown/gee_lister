@@ -3,7 +3,7 @@
 
   angular
     .module('geeLister')
-    .controller('RecipeController', function(RecipeService, GroceryListService){
+    .controller('RecipeController', function(RecipeService, GroceryListService, $state){
       var self = this;
       self.recipe = RecipeService.recipe;
       self.groceryList = GroceryListService.groceryList;
@@ -15,6 +15,7 @@
             self.groceryList.push(currentIngredients[i]);
           }
         }
+        $state.go('groceryList');
       }
     });
 
