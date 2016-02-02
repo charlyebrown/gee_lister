@@ -23,7 +23,7 @@
       })
       .state('recipe', {
         url: '/recipe/:recipeId',
-        templateUrl: 'app/results/recipe.html',
+        templateUrl: 'app/recipes/recipe.html',
         controller: 'RecipeController',
         controllerAs: 'ctrl'
       });

@@ -3,13 +3,13 @@
 
   angular
     .module('geeLister')
-    .controller('GroceryListController', function(GroceryListService){
+    .controller('GroceryListController', function(GroceryListService, RecipeService){
       var self = this;
       self.groceryList = GroceryListService.groceryList;
-      console.log(self.groceryList);
-      self.searchForMoreItems = function(){
-      	console.log('checked items: ' + self.checkedGroceryItems);
+      self.searchForMoreItems = function() {
+      	RecipeService.search(self.checkedGroceryItems);
       }
+
     });
 
 })();

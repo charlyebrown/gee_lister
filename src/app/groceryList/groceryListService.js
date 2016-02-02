@@ -3,4 +3,5 @@ angular
 .service('GroceryListService', function() {
 	var self = this;
 	self.groceryList = [];
+
 })
