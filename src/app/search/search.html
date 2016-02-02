@@ -1,19 +1,12 @@
 <div class="container">
-
   <div class="text-center">
     <h2>What recipes are you looking for today?</h2>
-	<input ng-model="ctrl.searchParams" type="text"/>
-	<button ng-click="ctrl.search()">Search</button>
+    <form novalidate class="form-group">
+    	<input ng-model="ctrl.searchParams" type="text"/>
+    	<button ng-click="ctrl.search()">Search</button>
+    </form>	
   </div>
-
   <div gl-recipes-directive class="text-center results">
   </div>
-
 </div>
 
-
-<!-- <form novalidate class="simple-form">
-    Name: <input type="text" ng-model="user.name" /><br />
-    
-    <input type="button" ng-click="reset()" value="Reset" />
-  </form> -->
