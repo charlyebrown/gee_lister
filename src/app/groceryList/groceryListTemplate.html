@@ -9,6 +9,18 @@
             <h4 ng-click="ctrl.deleteItem(item)">Delete</h4>
     	</ul>
     </div>
+    <form name="ctrl.addItemToForm" ng-submit="ctrl.addItem(addItemToList.$valid)" novalidate>
+        <div class="form-group">
+            <label>What would you like to add to your list?</label>
+            <input type="text" 
+                   name="additionalItem" 
+                   class="form-control" 
+                   ng-model="ctrl.itemToAdd" 
+                   required>   
+        </div>
+        <button type="submit" class="btn btn-primary" ng-submit="ctrl.onSubmit()">Add Item</button>
+    </form>
+
     <button ng-click="ctrl.searchForMoreItems()">Search for recipes with these ingredients</button>
   </div>
 </div>
