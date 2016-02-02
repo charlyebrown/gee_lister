@@ -6,6 +6,7 @@
     		<input type="checkbox" 
     			   checklist-model="ctrl.checkedGroceryItems" 
     			   checklist-value="item">{{item}}
+            <h4 ng-click="ctrl.deleteItem(item)">Delete</h4>
     	</ul>
     </div>
     <button ng-click="ctrl.searchForMoreItems()">Search for recipes with these ingredients</button>

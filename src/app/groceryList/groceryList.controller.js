@@ -12,8 +12,11 @@
       	.then(function(){
       		console.log()
       		$state.go('home');
-      	})
-      	
+      	}) 	
+      };
+      self.deleteItem = function(item) {
+        var index = self.groceryList.indexOf(item);
+        self.groceryList.splice(index, 1);
       }
 
     });
