@@ -10,6 +10,7 @@
       	console.log('checked items: ' + self.checkedGroceryItems);
       	RecipeService.search(self.checkedGroceryItems)
       	.then(function(){
+      		console.log()
       		$state.go('home');
       	})
       	
