@@ -11,6 +11,14 @@ angular
 
     self.search = function(searchParams){
 		return SearchFactory.get({
-		q: searchParams
-	})}
+			q: searchParams
+		})  
+	    .$promise
+		.then(function onSuccess(response) {
+			RecipesService.recipes = response.matches;
+			console.log(RecipesService.recipes);
+		}, function onError(error){
+			console.log(error)
+		});
+	}
 })

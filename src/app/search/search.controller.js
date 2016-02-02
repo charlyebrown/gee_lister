@@ -8,10 +8,10 @@
     .controller('SearchController', function (RecipesService, RecipeService){
     	console.log('SearchController');
     	var self = this;
-    	if (results === null){
-    	} else {
-    		self.recipes = results;
-    	}
+    	if (RecipesService.recipes.length > 0){
+            results = RecipesService.recipes;
+            self.recipes = results;
+    	} 
 
     	self.getRecipe = RecipeService.getRecipe;
     	
@@ -19,15 +19,11 @@
 
     	self.search = function() {
     		RecipeService.search(self.searchParams)
-    		.$promise
-			.then(function onSuccess(response) {
-				RecipesService.recipes = response.matches;
-				results = RecipesService.recipes;
-				self.recipes = results;
-			}, function onError(error){
-				console.log(error)
-			}); 
-    	
+            .then(function() {
+                results = RecipesService.recipes;
+                console.log('result: ' + results);
+                self.recipes = results;
+            })
     	};
 	})
 })();

@@ -9,13 +9,10 @@
       self.searchForMoreItems = function() {
       	console.log('checked items: ' + self.checkedGroceryItems);
       	RecipeService.search(self.checkedGroceryItems)
-      	.$promise
-			.then(function onSuccess(response) {
-				RecipesService.recipes = response.matches;
-				$state.go('home');
-			}, function onError(error){
-				console.log(error)
-			});
+      	.then(function(){
+      		$state.go('home');
+      	})
+      	
       }
 
     });
