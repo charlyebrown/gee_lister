@@ -26,6 +26,15 @@
           self.addItemToForm.$setPristine();
         } 
       }
+
+      self.deleteItems = function() {
+        console.log('checked items: ' + self.checkedGroceryItems);
+        for (var i = 0; i < self.checkedGroceryItems.length; i ++) {
+          var index = self.groceryList.indexOf(self.checkedGroceryItems[i]);
+          self.groceryList.splice(index, 1);
+        }
+      }
+
     });
 
 })();

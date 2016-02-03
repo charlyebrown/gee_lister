@@ -8,7 +8,7 @@
       self.recipe = RecipeService.recipe;
       self.groceryList = GroceryListService.groceryList;
       
-      self.addToGroceryList = function(GroceryListService){
+      self.addToGroceryList = function(){
         var currentIngredients = self.recipe.ingredients;
         for (var i = 0; i < currentIngredients.length; i++) { 
           if (!self.groceryList.includes(currentIngredients[i])) {

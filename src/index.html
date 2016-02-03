@@ -19,9 +19,9 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="collapse navbar-collapse">
     <div class="container">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <li><a href='#' ui-sref="home">Search</a></li>
         <!-- <li><a href='#' ui-sref="results">Results</a></li> -->
         <li><a href='#' ui-sref="groceryList">Grocery List</a></li>
@@ -32,8 +32,12 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <header>
+        <div class="header-content">
+            <div ui-view></div>
+        </div>
+    </header>   
     
-    <div ui-view></div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

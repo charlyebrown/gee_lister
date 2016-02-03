@@ -23,6 +23,8 @@
                 results = RecipesService.recipes;
                 console.log('result: ' + results);
                 self.recipes = results;
+                self.searchParams = "";
+                self.searchForm.$setPristine();
             })
     	};
 	})

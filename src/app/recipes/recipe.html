@@ -1,11 +1,11 @@
 <div class='container'>
-	<div>Recipe:</div>
-	<div ng-bind="ctrl.recipe.recipeName"></div>
+	<!-- <div><h2>Recipe:</h2></div> -->
+	<h2><div ng-bind="ctrl.recipe.recipeName"></div><h2>
 	<!-- <img src="{{ctrl.recipe.imageUrlsBySize}}"> -->
-  		<div><h3>Ingredients: </h3>
+  		<div><h4>Ingredients: </h4>
   			<ul>
- 				<li ng-repeat="recipe in ctrl.recipe.ingredients" ng-bind="recipe"></li>	
+ 				<h5><li ng-repeat="recipe in ctrl.recipe.ingredients" ng-bind="recipe"></li></h5>	
   			</ul>	
   		</div>
-  	<button ng-click="ctrl.addToGroceryList()">Add Ingredients to Grocery List</button>
+  	<button class="btn btn-default" ng-click="ctrl.addToGroceryList()">Add Ingredients to Grocery List</button>
 </div>

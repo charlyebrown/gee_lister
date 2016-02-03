@@ -1,6 +1,6 @@
-<div class="h2 text-center">
+<div class="h2 text-center results col-lg-12">
 	<div ng-repeat="recipe in ctrl.recipes">
-  		<a ui-sref="recipe({recipeId: recipe.id})" ng-bind="recipe.recipeName" ng-click="ctrl.getRecipe(recipe)"></a>
+  		<h4><a ui-sref="recipe({recipeId: recipe.id})" ng-bind="recipe.recipeName" ng-click="ctrl.getRecipe(recipe)"></a></h4>
   		<!-- <img src="recipe.imageUrlsBySize.90"> -->
   	</div>
 </div>

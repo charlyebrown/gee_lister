@@ -1,26 +1,27 @@
 <div class="container">
-  <div class="h2 text-center">
+  <div class="grocery-list col-md-12">
     <h1>Grocery List</h1>
     <div ng-repeat="item in ctrl.groceryList">
     	<ul>
-    		<input type="checkbox" 
+    		<h4><input type="checkbox" 
     			   checklist-model="ctrl.checkedGroceryItems" 
-    			   checklist-value="item">{{item}}
-            <h4 ng-click="ctrl.deleteItem(item)">Delete</h4>
+    			   checklist-value="item">{{item}}</h4>
+             <!-- <h5 ng-click="ctrl.deleteItem(item)">X</h5></span> -->
     	</ul>
     </div>
+    <button class="btn btn-default" ng-click="ctrl.searchForMoreItems()">Search for recipes with these ingredients</button>
+    <button class="btn btn-default" ng-click="ctrl.deleteItems()">Remove items from my list</button>
     <form name="ctrl.addItemToForm" ng-submit="ctrl.addItem(addItemToList.$valid)" novalidate>
         <div class="form-group">
-            <label>What would you like to add to your list?</label>
+            <h3><label>What would you like to add to your list?</label></h3>
             <input type="text" 
-                   name="additionalItem" 
-                   class="form-control" 
+                   name="additionalItem"
                    ng-model="ctrl.itemToAdd" 
                    required>   
         </div>
-        <button type="submit" class="btn btn-primary" ng-submit="ctrl.onSubmit()">Add Item</button>
+        <button type="submit" class="btn btn-default">Add Item</button>
     </form>
 
-    <button ng-click="ctrl.searchForMoreItems()">Search for recipes with these ingredients</button>
+    
   </div>
 </div>
